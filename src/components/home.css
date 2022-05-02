@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+.card {
+  background-color: #007bff;
+  width: 1115px;
+  height: 450px;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+
+
+h2 {
+  font-family: "Inter", sans-serif;
+  font-size: 2.1rem;
+}
+
+.para.stat-text {
+  margin-top: -25px;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.para {
+  font-family: "Lexend", sans-serif;
+  padding-top: 2.1em;
+  font-size: 0.9rem;
+ 
+  line-height: 1.75em;
+}
+.number {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  
+}
+
+.highlight {
+  color: #007bff;
+}
+
+.left {
+  padding: 4.7em 7em 3em 5em;
+  flex-basis: 50%;
+}
+
+.stats {
+  margin-top: 4.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right {
+  background-image: url(https://lholcomb.github.io/Stats-preview-card-component/images/image-header-desktop.jpg);
+  background-size: cover;
+  flex-basis: 50%;
+}
+
+.overlay {
+  background-color:#007bff;
+  background-blend-mode: multiply;
+}
+
+@media (max-width: 1145px) {
+  .container {
+    padding: 2em;
+  }
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .right {
+    background-image: url(https://lholcomb.github.io/Stats-preview-card-component/images/image-header-mobile.jpg);
+    height: 100%;
+    order: -1;
+  }
+  .left h2 {
+    text-align: center;
+  }
+  .left p {
+    text-align: center;
+  }
+  .left {
+    padding: 2em 3em;
+  }
+  .stats {
+    margin-top: 0;
+    flex-direction: column;
+  }
+  .stats div {
+    padding-top: 3em;
+  }
+}

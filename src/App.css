@@ -24,6 +24,11 @@
   color: white;
 }
 
+.bg-primary
+{
+  color:#007bff
+}
+
 .App-link {
   color: #61dafb;
 }
