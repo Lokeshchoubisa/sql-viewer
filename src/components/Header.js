@@ -15,8 +15,6 @@ function Header(props) {
         let q=`query-${openTabs.length}`;
         setActiveTab(q);
         setOpenTabs([...openTabs,q]);
-       
-      
     }} class="btn btn-outline-success my-2 my-sm-0">Query +</button>
   </form>
 </nav>

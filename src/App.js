@@ -1,33 +1,56 @@
-import { useState } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import QueryArea from "./components/QueryArea";
-import SideBar from "./components/SideBar";
-
-
+const QueryArea = React.lazy(() => import("./components/QueryArea"));
+const SideBar = React.lazy(() => import("./components/SideBar"));
 
 function App() {
 
-  const [openTabs,setOpenTabs]=useState([]);
-  const [activeTab,setActiveTab]=useState(null);
+  const [openTabs, setOpenTabs] = useState([]);
+  const [activeTab, setActiveTab] = useState(null);
+
+
+  //changing active stage for tabs 
+  useEffect(() => {
+    if (activeTab) {
+      let elems = document.getElementsByClassName("tableClass");
+      for (let i = 0; i < elems.length; i++) {
+        elems[i].classList.remove("active");
+      }
+      elems = document.getElementsByClassName("tabContent");
+      for (let i = 0; i < elems.length; i++) {
+        elems[i].classList.remove("active");
+      }
+      document.getElementById(`list-${activeTab}-list`).classList.add("active");
+      document.getElementById(`list-${activeTab}`).classList.add("active");
+
+    }
+  }, [activeTab])
+
+
+
+
   return (
     <>
       <div className="container-fluid">
-      <div className="row"> 
-        <Header activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs}/>
-      </div>
-        
         <div className="row">
-          
+          <Header activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs} />
+        </div>
+
+        <div className="row">
+
           <div className="col-3">
-            <SideBar activeTab={activeTab} setActiveTab={setActiveTab}  openTabs={openTabs} setOpenTabs={setOpenTabs}/>
+            <Suspense fallback={<div>Loading...</div>}>
+              <SideBar activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs} />
+            </Suspense>
           </div>
           <div className="col-9">
-            <QueryArea activeTab={activeTab} setActiveTab={setActiveTab}  openTabs={openTabs} setOpenTabs={setOpenTabs} />
+            <Suspense fallback={<div>Loading...</div>}>
+              <QueryArea activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs} />
+            </Suspense>
           </div>
         </div>
-      
+
       </div>
     </>
   );
