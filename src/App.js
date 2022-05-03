@@ -5,12 +5,10 @@ const QueryArea = React.lazy(() => import("./components/QueryArea"));
 const SideBar = React.lazy(() => import("./components/SideBar"));
 
 function App() {
-
   const [openTabs, setOpenTabs] = useState([]);
   const [activeTab, setActiveTab] = useState(null);
 
-
-  //changing active stage for tabs 
+  //changing active tab 
   useEffect(() => {
     if (activeTab) {
       let elems = document.getElementsByClassName("tableClass");

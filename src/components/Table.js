@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react'
 import { MDBDataTableV5 } from 'mdbreact'
 import { GetData } from '../utils';
 
+
 function Table(props) {
     const { tableName } = props;
     const [dataTable, setDataTable] = useState({});
