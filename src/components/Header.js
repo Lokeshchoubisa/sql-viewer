@@ -15,7 +15,8 @@ function Header(props) {
         let q=`query-${openTabs.length}`;
         setActiveTab(q);
         setOpenTabs([...openTabs,q]);
-    }} class="btn btn-outline-success my-2 my-sm-0">Query +</button>
+    }} class="btn btn-outline-success my-2 mr-2 my-sm-0">Query +</button>
+    <a target="_blank" href="https://github.com/Lokeshchoubisa/sql-viewer" class="btn btn-outline-success my-2 my-sm-0">GitHub</a>
   </form>
 </nav>
 </div>

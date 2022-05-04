@@ -18,17 +18,18 @@ function App() {
 
         <div className="row">
 
-          <div className="col-3">
+          <div className="col-sm-12 col-md-3 col-lg-3">
             <Suspense fallback={<div>Loading...</div>}>
               <SideBar activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs} />
             </Suspense>
           </div>
-          <div className="col-9">
+          <div className="col-sm-12 col-md-9 col-lg-9">
             <Suspense fallback={<div>Loading...</div>}>
               <QueryArea activeTab={activeTab} setActiveTab={setActiveTab} openTabs={openTabs} setOpenTabs={setOpenTabs} />
             </Suspense>
           </div>
         </div>
+       
 
       </div>
     </>

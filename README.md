@@ -1,4 +1,5 @@
 # Online SQL Editor
+You can see this web app at **https://sqldb-viewer.herokuapp.com/**
 
 This is an online SQL editor built specifically for the frontend task of Atlan's front-end internship. This particular project is built using **[React](https://reactjs.org/)**, and the **[React Bootstrap](https://react-bootstrap.github.io/)** front-end framework. It originally contains a data dump borrowed from [this](https://github.com/graphql-compose/graphql-compose-examples/tree/master/examples/northwind/data/csv) repository. The sections below detail the salient features of this project.
 
@@ -13,24 +14,15 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 
 ## Performance Audit
 
-- **[GTmetrix](https://gtmetrix.com/)**: The fully loaded time is **1.4 seconds**, with the first contentful paint at **969 ms**. The site receives an A grade too.
-- **[web.dev](https://web.dev/measure)**: The load time according to web.dev is **2.2 seconds**. The site also scores **96 points in performance** and **100 points in best practices**. The exact metrics are:
-  - **First Contentful Paint**: `2.2s`
-  - **Speed Index**: `2.2s`
-  - **Largest Contentful Paint**: `2.2s`
-  - **Time to Interactive**: `2.2s`
-  - **Total Blocking Time**: `0ms`
-  - **Cumulative Layout Shift**: `0`
-- **Chrome DevTools**: The load time according to Chrome DevTools is **3.97 seconds**. I got this load time from the `load` event in the Network tab of the DevTools. Along the same lines, the `DOMContentLoaded` event fires after **3.60 seconds**.
+- **[GTmetrix](https://gtmetrix.com/)**: The fully loaded time is **0.849ms seconds**, with the first contentful paint at **502 ms**. The site receives an A grade too.
+- **[pingdom](https://tools.pingdom.com/)**: The load time according to pingdom **1.27 seconds**. The site also scores **92 points and grade A in performance** . 
 
 
 ## Optimisations
-- The most time-saving optimisation would be **dynamic fetching**. The rows of a table are fetched only when the user requests it. Not a second before. This shaves a lot of seconds off our initial load time, by distributing that across requests.
+
+- **Lazy loading**. Loading or rendering components on demand.It can improve the application’s performance, and at the same time can save us a lot of resources. 
+- The most time-saving optimisation would be **dynamic fetching**. The rows of a table are fetched only when the user requests it. Not a second before. This saves a lot of seconds off our initial load time, by distributing that across requests.
 - **Extensive use of the `useMemo` hook**. The `useMemo` hook reduces the number of re-computations by storing the results of computations with the same dependencies. The data of tables is entirely 'memoised'.
-- **Intelligent use of the React-Bootstrap library.** Let's suppose we want to import a `Alert` component. There are two ways to do that:
-  - `import { Alert } from "react-bootstrap";`
-  - `import Alert from "react-bootstrap/Alert";`   
-  The first option imports the entire library, and then imports the Alert component, whereas the second, more optimised, way imports just the Alert component, and nothing else. This too, shaves a lot of the load time, and this is what this project uses.
 - **Keeping the number of state changes as low as possible**. While this has been accompanied by a slight reduction in the feature set, it has more than made up for it in the load time of a re-render.
 - **Reduced the number of API calls**. I have reduced the number of API calls, by using the `useEffect` hook, which shaved off almost 2 seconds after each click.
 
@@ -38,20 +30,10 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
