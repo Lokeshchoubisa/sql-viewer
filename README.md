@@ -6,9 +6,10 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 
 1. **Tab Based Interface**: An easy-to-use tab based interface allows the user to switch between multiple queries at once. Want to view a table _and_ run a query at the same time? Sure, go right ahead. Each tab maintains its own separate state, so as long as you don't reload the page, you can jump right back to where you left a tab.
 2. **Dynamic Table Views**: The list of tables is fetched at first, but the actual data isn't. Only when you click on the name of a table, are the entries fetched. Keeping the application lightweight, and blazing fast.
-3. **Defining Custom Types for Columns**: Each person is not the same; similarly, each column is not the same. You might want to specify certain processing functions: want to parse an image, or return an integer. You can do all this, and the table will display the processed result.
+3. **Reduce loading time by lazy loading** Used React.lazy() function to load unused js after page has loaded. 
 4. **Result Statistics**: The user will also be alerted about the time taken to complete a query, giving the user a measure to check the performance of the system.
-5. **Ability to save the results as JSON, XML, or CSV**: This application includes functionality to save the results of a query in JSON, XML, and CSV formats. _**Pro Tip**: You can also save a query,so that you don't have to type the same thing twice!_
+5. **Analytics feature**:User can se how many query were performed 
+6. **Ability to save the results as JSON, XML, or CSV**: This application includes functionality to save the save and export query result.
 
 ## Performance Audit
 

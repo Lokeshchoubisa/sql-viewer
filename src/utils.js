@@ -8,8 +8,7 @@ export const GetData = (fileName) => {
     if (FILE_NAMES.indexOf(fileName) === -1) {
       reject("Table does not exist");
     }
-    reject("Testing");
-    return ;
+  
     let result = { error: null, rows: [], header: [] };
     const startTime = new Date().getTime();
     const fetchUrl = `https://api.github.com/repos/graphql-compose/graphql-compose-examples/contents/examples/northwind/data/csv/${fileName}.csv?ref=master`
