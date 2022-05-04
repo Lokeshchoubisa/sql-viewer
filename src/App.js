@@ -6,26 +6,7 @@ const SideBar = React.lazy(() => import("./components/SideBar"));
 
 function App() {
   const [openTabs, setOpenTabs] = useState([]);
-  const [activeTab, setActiveTab] = useState(null);
-
-  //changing active tab 
-  useEffect(() => {
-    if (activeTab) {
-      let elems = document.getElementsByClassName("tableClass");
-      for (let i = 0; i < elems.length; i++) {
-        elems[i].classList.remove("active");
-      }
-      elems = document.getElementsByClassName("tabContent");
-      for (let i = 0; i < elems.length; i++) {
-        elems[i].classList.remove("active");
-      }
-      document.getElementById(`list-${activeTab}-list`).classList.add("active");
-      document.getElementById(`list-${activeTab}`).classList.add("active");
-
-    }
-  }, [activeTab])
-
-
+  const [activeTab, setActiveTab] = useState("home");
 
 
   return (

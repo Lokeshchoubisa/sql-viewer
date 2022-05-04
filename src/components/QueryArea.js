@@ -6,7 +6,7 @@ const Table = React.lazy(() => import("./Table"));
 const {oneDark}=React.lazy(()=>import("@codemirror/theme-one-dark"));
 
 function QueryArea(props) {
-    const { openTabs } = props;
+    const { openTabs ,activeTab} = props;
     const tables = openTabs;
 
     return (
@@ -15,12 +15,19 @@ function QueryArea(props) {
 
             </div>
             <div class="tab-content" id="nav-tabContent">
-                <div class={"tab-pane fade show tabContent active show"} id={`list-home`} role="tabpanel" aria-labelledby={`list-home-list`}>
+                <div 
+                 key={`list-home`}
+                className={activeTab==="home" ? "tab-pane fade show tabContent active show" : "tab-pane fade show tabContent show" } id={`list-home`} role="tabpanel" aria-labelledby={`list-home-list`}>
                     <Home />
                 </div>
-
+                
                 {tables.map(tab => {
-                    return <div class={"tab-pane fade show tabContent"} id={`list-${tab}`} role="tabpanel" aria-labelledby={`list-${tab}-list`}>
+                    console.log(tab,activeTab)
+                    return <div 
+                  
+                    className={activeTab===tab ? "tab-pane fade show tabContent active show" : "tab-pane fade show tabContent show" }
+                    key={`list-${tab}`}
+                    id={`list-${tab}`} role="tabpanel" aria-labelledby={`list-${tab}-list`}>
 
                         <div className="mb-3 mt-3">
                             <button type="button" class="btn btn-success mr-2">Run</button>
