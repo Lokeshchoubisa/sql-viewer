@@ -24,7 +24,6 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 - The most time-saving optimisation would be **dynamic fetching**. The rows of a table are fetched only when the user requests it. Not a second before. This saves a lot of seconds off our initial load time, by distributing that across requests.
 - **Extensive use of the `useMemo` hook**. The `useMemo` hook reduces the number of re-computations by storing the results of computations with the same dependencies. The data of tables is entirely 'memoised'.
 - **Keeping the number of state changes as low as possible**. While this has been accompanied by a slight reduction in the feature set, it has more than made up for it in the load time of a re-render.
-- **Reduced the number of API calls**. I have reduced the number of API calls, by using the `useEffect` hook, which shaved off almost 2 seconds after each click.
 
 ## Available Scripts
 
