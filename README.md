@@ -14,7 +14,7 @@ This is an online SQL editor built specifically for the frontend task of Atlan's
 
 ## Performance Audit
 
-- **[GTmetrix](https://gtmetrix.com/)**: The fully loaded time is **0.849ms seconds**, with the first contentful paint at **502 ms**. The site receives an A grade too.
+- **[GTmetrix](https://gtmetrix.com/)**: The fully loaded time is **0.849ms seconds**, with the first contentful paint at **502 ms**. The site receives 100% performance and 92% structure and A grade.
 - **[pingdom](https://tools.pingdom.com/)**: The load time according to pingdom **1.27 seconds**. The site also scores **92 points and grade A in performance** . 
 
 
